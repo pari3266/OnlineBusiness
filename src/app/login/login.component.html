@@ -1,0 +1,49 @@
+<mat-card>
+    <mat-card-header>
+      <mat-card-title>ورود به سیستم</mat-card-title>
+    </mat-card-header>
+    <form class="example-form" [formGroup]="loginForm">
+        <mat-form-field class="example-full-width">
+            <mat-label>نام کاربری</mat-label>
+            <input type="text" matInput formControlName="username" autocomplete="off" [(ngModel)]="username">
+            <mat-error *ngIf="f['username'].errors && f['username'].hasError('required') && f['username'].touched">
+              وارد کردن نام کاربری الزامی است.
+            </mat-error>
+            <mat-error *ngIf="f['username'].errors && f['username'].errors['pattern'] && f['username'].touched">
+              نام کاربری نباید با عدد شروع شود.
+            </mat-error>
+            <mat-error *ngIf="!userFocus && f['username'].errors && f['username'].errors['minlength']">
+              نام کاربری باید بیشتر از 5 کاراکتر باشد.
+            </mat-error>
+            <mat-error *ngIf="!userFocus && f['username'].errors && f['username'].errors['maxlength']">
+              نام کاربری باید کمتر از 15 کاراکتر باشد.
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" fxLayout="row" style="width: 370px;">
+            <input class="form-control"
+                   matInput
+                   [type]="showPass ? 'password' : 'text'"
+                   formControlName="password"
+                   (focusout)="userFocus = false"
+                   (focusin)="userFocus = true"
+                   autocomplete="off"
+                   [(ngModel)]="password">
+            <mat-icon style="margin: 0px; cursor: pointer" matSuffix (click)="showPass = !showPass">{{showPass ? 'visibility_off' : 'visibility'}}</mat-icon>
+            <mat-error *ngIf="f['password'].errors && f['password'].hasError('required') && f['password'].touched">
+              وارد کردن رمز عبور الزامي است.
+            </mat-error>
+            <mat-error *ngIf="!passFocus && f['password'].errors && f['password'].errors['minlength'] && f['password'].touched">
+              رمز عبور بايد بيشتر از 6 کاراکتر باشد.
+            </mat-error>
+            <mat-error *ngIf="!passFocus && f['password'].errors && f['password'].errors['maxlength'] && f['password'].touched">
+              رمز عبور بايد کمتر از 20 کاراکتر باشد.
+            </mat-error>
+          </mat-form-field>
+      </form>
+    <mat-card-actions>
+        <button type="submit" class="btn btn-success btn-lg" 
+        style="left: 170px !important;
+        position: relative;" (click)="login()">ورود</button>
+    </mat-card-actions>
+  </mat-card>

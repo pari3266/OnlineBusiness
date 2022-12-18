@@ -1,0 +1,62 @@
+<mat-card>
+    <mat-card-header>
+      <mat-card-title>ثبت نام</mat-card-title>
+      <mat-card-subtitle>برای ورود به سیستم ابتدا ثبت نام کنید</mat-card-subtitle>
+    </mat-card-header>
+    <form class="example-form" [formGroup]="signUpForm">
+        <mat-form-field class="example-full-width">
+          <mat-label>ایمیل</mat-label>
+          <input type="email" matInput formControlName="email"
+                 placeholder="Ex. pat@example.com" autocomplete="off" [(ngModel)]="email">
+          <mat-error *ngIf="f['email'].hasError('email') && !f['email'].hasError('required')"> 
+            یک آدرس ایمیل معتبر وارد کنید
+          </mat-error>
+          <mat-error *ngIf="f['email'].hasError('required')">
+            واردکردن ایمیل <strong>ضروری</strong>است
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>نام کاربری</mat-label>
+            <input type="text" matInput formControlName="username" autocomplete="off" [(ngModel)]="username">
+            <mat-error *ngIf="f['username'].errors && f['username'].hasError('required') && f['username'].touched">
+              وارد کردن نام کاربری الزامی است.
+            </mat-error>
+            <mat-error *ngIf="f['username'].errors && f['username'].errors['pattern'] && f['username'].touched">
+              نام کاربری نباید با عدد شروع شود.
+            </mat-error>
+            <mat-error *ngIf="!userFocus && f['username'].errors && f['username'].errors['minlength']">
+              نام کاربری باید بیشتر از 5 کاراکتر باشد.
+            </mat-error>
+            <mat-error *ngIf="!userFocus && f['username'].errors && f['username'].errors['maxlength']">
+              نام کاربری باید کمتر از 15 کاراکتر باشد.
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" fxLayout="row" style="width: 370px;">
+            <input class="form-control"
+                   matInput
+                   [type]="showPass ? 'password' : 'text'"
+                   formControlName="password"
+                   (focusout)="userFocus = false"
+                   (focusin)="userFocus = true"
+                   autocomplete="off"
+                   [(ngModel)]="password">
+            <mat-icon style="margin: 0px; cursor: pointer" matSuffix (click)="showPass = !showPass">{{showPass ? 'visibility_off' : 'visibility'}}</mat-icon>
+            <mat-error *ngIf="f['password'].errors && f['password'].hasError('required') && f['password'].touched">
+              وارد کردن رمز عبور الزامي است.
+            </mat-error>
+            <mat-error *ngIf="!passFocus && f['password'].errors && f['password'].errors['minlength'] && f['password'].touched">
+              رمز عبور بايد بيشتر از 6 کاراکتر باشد.
+            </mat-error>
+            <mat-error *ngIf="!passFocus && f['password'].errors && f['password'].errors['maxlength'] && f['password'].touched">
+              رمز عبور بايد کمتر از 20 کاراکتر باشد.
+            </mat-error>
+          </mat-form-field>
+      </form>
+    <mat-card-actions>
+        <button type="submit" class="btn btn-success btn-lg" 
+        style="left: 170px !important;
+        position: relative;" (click)="submit()">ثبت</button>
+    </mat-card-actions>
+  </mat-card>

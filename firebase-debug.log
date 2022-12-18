@@ -1,0 +1,36 @@
+[debug] [2022-12-18T07:59:53.527Z] ----------------------------------------------------------------------
+[debug] [2022-12-18T07:59:53.529Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Parisa\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js login
+[debug] [2022-12-18T07:59:53.529Z] CLI Version:   11.18.0
+[debug] [2022-12-18T07:59:53.529Z] Platform:      win32
+[debug] [2022-12-18T07:59:53.530Z] Node Version:  v16.17.1
+[debug] [2022-12-18T07:59:53.548Z] Time:          Sun Dec 18 2022 11:29:53 GMT+0330 (Iran Standard Time)
+[debug] [2022-12-18T07:59:53.549Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-12-18T07:59:53.552Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[info] i  Firebase optionally collects CLI and Emulator Suite usage and error reporting information to help improve our products. Data is collected in accordance with Google's privacy policy (https://policies.google.com/privacy) and is not used to identify you.
+ 
+[warn] !  Unable to fetch the CLI MOTD and remote config. 
+[debug] [2022-12-18T07:59:53.759Z] Failed to fetch MOTD FirebaseError: Failed to make request to https://firebase-public.firebaseio.com/cli.json
+[info] i  To change your data collection preference at any time, run `firebase logout` and log in again. 
+[info] 
+[info] Visit this URL on this device to log in:
+[info] https://accounts.google.com/o/oauth2/auth?client_id=563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com&scope=email%20openid%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloudplatformprojects.readonly%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Ffirebase%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform&response_type=code&state=797212329&redirect_uri=http%3A%2F%2Flocalhost%3A9005
+[info] 
+[info] Waiting for authentication...
+[debug] [2022-12-18T08:01:05.925Z] >>> [apiv2][query] POST https://auth.firebase.tools/attest [none]
+[debug] [2022-12-18T08:01:05.926Z] >>> [apiv2][body] POST https://auth.firebase.tools/attest {"session_id":"115090b0-aac9-445b-8530-dda657eef4bc"}
+[debug] [2022-12-18T08:01:06.574Z] <<< [apiv2][status] POST https://auth.firebase.tools/attest 200
+[debug] [2022-12-18T08:01:06.574Z] <<< [apiv2][body] POST https://auth.firebase.tools/attest {"token":"MeWuD952eRHAlB2aNZ3cqtaPNCq_8LoCxvCxO5bWLQQ"}
+[info] 
+[info] To sign in to the Firebase CLI:
+[info] 
+[info] 1. Take note of your session ID:
+[info] 
+[info]    11509
+[info] 
+[info] 2. Visit the URL below on any device and follow the instructions to get your code:
+[info] 
+[info]    https://auth.firebase.tools/login?code_challenge=BGrpWG-Bo1jtsEkeZSSS_k-uo4T5zfSSvTcAw1NJW48&session=115090b0-aac9-445b-8530-dda657eef4bc&attest=MeWuD952eRHAlB2aNZ3cqtaPNCq_8LoCxvCxO5bWLQQ
+[info] 
+[info] 3. Paste or enter the authorization code below once you have it:
+[info] 
