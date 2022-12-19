@@ -10,13 +10,19 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './components/home/home.component';
 import { SignInComponent } from './sign-in/sign-in.component';
+import { SearchComponent } from './components/search/search.component';
+import { ListOfProductsComponent } from './components/list-of-products/list-of-products.component';
+import { CatalogueComponent } from './components/catalogue/catalogue.component';
 @NgModule({
   declarations: [
     AppComponent,
     SignUpComponent,
     LoginComponent,
     HomeComponent,
-    SignInComponent
+    SignInComponent,
+    SearchComponent,
+    ListOfProductsComponent,
+    CatalogueComponent
   ],
   imports: [
     BrowserModule,

@@ -5,6 +5,8 @@ import {MatCardModule} from '@angular/material/card';
 import {MatInputModule} from '@angular/material/input';
 import {MatIconModule} from '@angular/material/icon';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatTreeModule} from '@angular/material/tree';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 @NgModule({
   imports: [CommonModule,
     MatTabsModule,
@@ -12,6 +14,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     MatInputModule,
     MatIconModule,
     MatSnackBarModule,
+    MatTreeModule,
+    MatAutocompleteModule,
 ],
   exports: [CommonModule,
     MatTabsModule,
@@ -19,6 +23,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     MatInputModule,
     MatIconModule,
     MatSnackBarModule,
+    MatTreeModule,
+    MatAutocompleteModule,
   ],
 })
 export class MaterialModule {

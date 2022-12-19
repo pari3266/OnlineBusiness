@@ -1,0 +1,19 @@
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+
+  ::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex {
+    border-radius: 30px 30px 30px 30px !important;
+    margin-top: 10px;
+    background: aliceblue;
+  }
+
+  ::ng-deep .mat-form-field-underline {
+    width: 0% !important;
+  }
