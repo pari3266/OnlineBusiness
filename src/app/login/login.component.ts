@@ -50,7 +50,9 @@ export class LoginComponent implements OnInit {
   login(){
     this.user.username = this.username;
     this.user.password = this.password;
-    if(this.user.username == 'admin' && this.user.password == '123456'){
+
+    var user = JSON.parse(localStorage.getItem('users') || '{}');
+    if(this.user.username == user.username && this.user.password == user.password){
       this._snackBar.open('ورود با موفقیت انجام شد','ok' , {
         duration: this.durationInSeconds * 1000,
       });

@@ -18,8 +18,9 @@ export class SignUpComponent implements OnInit {
   username : string = '';
   password: string = '';
   email: string = '';
-  user : User = new User()
+  user : User = new User();
   durationInSeconds: number = 5;
+  users : User[] = [];
   constructor(private formBuilder: FormBuilder,
     private _snackBar: MatSnackBar,
     private router: Router,) { 
@@ -56,13 +57,37 @@ export class SignUpComponent implements OnInit {
   submit(){
     this.user.username = this.username;
     this.user.password = this.password;
-    if(this.user.username == 'admin' && this.user.password == '123456'){
-      this._snackBar.open('ثبت نام با موفقیت انجام شد','ok' , {
-        duration: this.durationInSeconds * 1000,
-      });
-      // this.router.navigate(['login']);
-    }
+    this.user.email = this.email;
 
+    this.users.push(this.user);
+    console.log(this.users);
+    // how to push users and save previous users
+    for(let user of this.users){
+      localStorage.setItem('users', JSON.stringify(user))
+    }
+    this._snackBar.open('ثبت نام با موفقیت انجام شد','ok' , {
+      duration: this.durationInSeconds * 1000,
+    });
+
+    // this.users.push({username: '', password: '', email: ''});
+    // for(let u of this.users){
+    //   if(u.username != this.username && u.email != this.email){
+    //     this.users.push(this.user);
+    //     console.log(this.users);
+    //     this._snackBar.open('ثبت نام با موفقیت انجام شد','ok' , {
+    //       duration: this.durationInSeconds * 1000,
+    //     });
+    //   }
+      // else if(u.username == this.username){
+      //   this._snackBar.open('نام کاربری تکراری می باشد','error' , {
+      //     duration: this.durationInSeconds * 1000,
+      //   });
+      // }else if(u.email == this.email){
+      //   this._snackBar.open('با این ایمیل قبلا ثبت نام انجام شده است','error' , {
+      //     duration: this.durationInSeconds * 1000,
+      //   });
+      // }
+    // }
   }
 
 }

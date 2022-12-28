@@ -7,7 +7,7 @@
         <mat-form-field class="example-full-width">
           <mat-label>ایمیل</mat-label>
           <input type="email" matInput formControlName="email"
-                 placeholder="Ex. pat@example.com" autocomplete="off" [(ngModel)]="email">
+                 placeholder="Ex. ex@example.com" autocomplete="off" [(ngModel)]="email">
           <mat-error *ngIf="f['email'].hasError('email') && !f['email'].hasError('required')"> 
             یک آدرس ایمیل معتبر وارد کنید
           </mat-error>

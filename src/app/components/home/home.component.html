@@ -7,31 +7,22 @@
             <div class="row">
                 <app-search class="col-lg"></app-search>
                 <div class="col-sm" style="margin-top: 10px;">
-                    <mat-icon>account_circle</mat-icon>
-                    <mat-icon>logout</mat-icon>
+                    <button mat-icon-button [matMenuTriggerFor]="menu" style="border: none !important;background: none !important;">
+                        <mat-icon class="pointer">account_circle</mat-icon>
+                      </button>
+                      <mat-menu #menu="matMenu">
+                        <button mat-menu-item routerLink="/signIn">
+                          <span>ثبت نام یا ورود</span>
+                        </button>
+                        <button mat-menu-item>
+                          <span>پروفایل</span>
+                        </button>
+                      </mat-menu>
+                      
+                    <mat-icon routerLink="/signIn" class="pointer">logout</mat-icon>
                 </div>
             </div>
-            <div class="d-flex flex-wrap">
-                <div *ngFor="let item of items.product" style="width: 300px;">
-                <mat-card class="example-card">
-                    <mat-card-header>
-                    <div mat-card-avatar class="example-header-image"></div>
-                    <mat-card-title>{{item.branch}}</mat-card-title>
-                    <mat-card-subtitle>{{item.name}}</mat-card-subtitle>
-                    </mat-card-header>
-                    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-                    <mat-card-content>
-                    <p>
-                        The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-                    </p>
-                    </mat-card-content>
-                    <mat-card-actions class="d-flex justify-content-around">
-                        <button class="order" mat-button>سفارش</button>
-                        <button class="comparision" mat-button>مقایسه</button>
-                    </mat-card-actions>
-                </mat-card> 
-            </div>
-            </div>
+           <app-catalogue></app-catalogue>
             
         </div>
       
