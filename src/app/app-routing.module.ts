@@ -11,7 +11,7 @@ export const routes: Routes = [
   {path: 'signIn' , component: SignInComponent},
   {path: 'home' , component: HomeComponent},
   {path: '' , component: SignInComponent},
-  {path: '**', redirectTo: 'signIn'},
+  {path: '**', redirectTo: 'home'},
 ];
 
 @NgModule({
