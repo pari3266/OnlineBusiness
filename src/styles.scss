@@ -6,3 +6,10 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .pointer{
     cursor: pointer;
 }
+.success-snackbar {
+    background: rgb(158, 219, 67);
+    button {
+        background-color: gray;
+        color: rgb(115, 213, 115); 
+    }
+  }

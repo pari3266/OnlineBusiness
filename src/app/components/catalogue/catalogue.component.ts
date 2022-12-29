@@ -6,25 +6,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./catalogue.component.scss']
 })
 export class CatalogueComponent implements OnInit {
-  items = {product:[{"name":"", "branch":"", "image":""},]};
+  items = {product:[{"id": 0,"name":"", "branch":"", "image":""},]};
 
   constructor() { }
 
   ngOnInit(): void {
     this.items = {
       "product":[  
-        {"name":"موبایل", "branch":"کالای دیجیتال", "image":""},  
-        {"name":"هدفون", "branch":"کالای دیجیتال", "image":""},  
-        {"name":"کیبرد", "branch":"کالای دیجیتال", "image":""},  
-        {"name":"مانیتور", "branch":"کالای دیجیتال", "image":""},  
-        {"name":"پیرهن زنانه", "branch":"پوشاک", "image":""},  
-        {"name":"پیرهن مردانه", "branch":"پوشاک", "image":""},  
-        {"name":"کیف زنانه", "branch":"پوشاک", "image":""}, 
-        {"name":"کیف مردانه", "branch":"پوشاک", "image":""},  
-        {"name":"کودتا", "branch":"بازی", "image":""},
-        {"name":"رکب", "branch":"بازی", "image":""},
-        {"name":"کهربا", "branch":"بازی", "image":""},
-        {"name":"زیرخاکی", "branch":"بازی", "image":""},
+        {"id":1,"name":"موبایل", "branch":"کالای دیجیتال", "image":""},  
+        {"id":2,"name":"هدفون", "branch":"کالای دیجیتال", "image":""},  
+        {"id":3,"name":"کیبرد", "branch":"کالای دیجیتال", "image":""},  
+        {"id":4,"name":"مانیتور", "branch":"کالای دیجیتال", "image":""},  
+        {"id":5,"name":"پیرهن زنانه", "branch":"پوشاک", "image":""},  
+        {"id":6,"name":"پیرهن مردانه", "branch":"پوشاک", "image":""},  
+        {"id":7,"name":"کیف زنانه", "branch":"پوشاک", "image":""}, 
+        {"id":8,"name":"کیف مردانه", "branch":"پوشاک", "image":""},  
+        {"id":9,"name":"کودتا", "branch":"بازی", "image":""},
+        {"id":10,"name":"رکب", "branch":"بازی", "image":""},
+        {"id":11,"name":"کهربا", "branch":"بازی", "image":""},
+        {"id":12,"name":"زیرخاکی", "branch":"بازی", "image":""},
 
       ]} 
   }

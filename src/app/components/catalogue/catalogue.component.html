@@ -13,7 +13,7 @@
         </p>
         </mat-card-content>
         <mat-card-actions class="d-flex justify-content-around">
-            <button class="order" mat-button>سفارش</button>
+            <button class="order" mat-button [routerLink]="['/product-details/' , item.id]">مشاهده جزییات</button>
             <button class="comparision" mat-button>مقایسه</button>
         </mat-card-actions>
     </mat-card> 

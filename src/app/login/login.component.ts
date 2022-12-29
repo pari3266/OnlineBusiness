@@ -55,6 +55,7 @@ export class LoginComponent implements OnInit {
     if(this.user.username == user.username && this.user.password == user.password){
       this._snackBar.open('ورود با موفقیت انجام شد','ok' , {
         duration: this.durationInSeconds * 1000,
+        panelClass: ['success-snackbar']
       });
       this.router.navigate(['home']);
     }

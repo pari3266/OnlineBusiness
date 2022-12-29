@@ -13,6 +13,9 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { SearchComponent } from './components/search/search.component';
 import { ListOfProductsComponent } from './components/list-of-products/list-of-products.component';
 import { CatalogueComponent } from './components/catalogue/catalogue.component';
+import { ProductDetailsComponent } from './components/product-details/product-details.component';
+import { ComparisonComponent } from './components/comparison/comparison.component';
+import { ProfileComponent } from './components/profile/profile.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +25,10 @@ import { CatalogueComponent } from './components/catalogue/catalogue.component';
     SignInComponent,
     SearchComponent,
     ListOfProductsComponent,
-    CatalogueComponent
+    CatalogueComponent,
+    ProductDetailsComponent,
+    ComparisonComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
