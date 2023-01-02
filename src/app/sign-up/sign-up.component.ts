@@ -18,6 +18,7 @@ export class SignUpComponent implements OnInit {
   username : string = '';
   password: string = '';
   email: string = '';
+  mobile: string = '';
   user : User = new User();
   durationInSeconds: number = 5;
   users : User[] = [];
@@ -30,6 +31,10 @@ export class SignUpComponent implements OnInit {
   ngOnInit(): void {
     this.signUpForm = this.formBuilder.group({
       email: ['', [
+        Validators.required,
+        Validators.email
+      ]],
+      mobile: ['', [
         Validators.required,
         Validators.email
       ]],
@@ -58,6 +63,7 @@ export class SignUpComponent implements OnInit {
     this.user.username = this.username;
     this.user.password = this.password;
     this.user.email = this.email;
+    this.user.mobile = this.mobile;
 
     this.users.push(this.user);
     console.log(this.users);
@@ -68,7 +74,7 @@ export class SignUpComponent implements OnInit {
     this._snackBar.open('ثبت نام با موفقیت انجام شد','ok' , {
       duration: this.durationInSeconds * 1000,
     });
-
+// also dont register with same mobile
     // this.users.push({username: '', password: '', email: ''});
     // for(let u of this.users){
     //   if(u.username != this.username && u.email != this.email){

@@ -12,7 +12,16 @@
             یک آدرس ایمیل معتبر وارد کنید
           </mat-error>
           <mat-error *ngIf="f['email'].hasError('required')">
-            واردکردن ایمیل <strong>ضروری</strong>است
+            واردکردن ایمیل <strong> ضروری </strong>است
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <mat-label>موبایل</mat-label>
+          <input type="mobile" matInput formControlName="mobile"
+                 autocomplete="off" [(ngModel)]="mobile">
+          <mat-error *ngIf="f['mobile'].hasError('required')">
+            واردکردن موبایل <strong> ضروری </strong>است
           </mat-error>
         </mat-form-field>
 

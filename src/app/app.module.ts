@@ -16,6 +16,7 @@ import { CatalogueComponent } from './components/catalogue/catalogue.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { ComparisonComponent } from './components/comparison/comparison.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { NavComponent } from './components/nav/nav.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +29,8 @@ import { ProfileComponent } from './components/profile/profile.component';
     CatalogueComponent,
     ProductDetailsComponent,
     ComparisonComponent,
-    ProfileComponent
+    ProfileComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,

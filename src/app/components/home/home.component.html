@@ -1,33 +1,11 @@
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-sm" class="list">
-            <app-list-of-products></app-list-of-products>
-        </div>
-        <div class="col">
-            <div class="row">
-                <app-search class="col-lg"></app-search>
-                <div class="col-sm" style="margin-top: 10px;">
-                    <button mat-icon-button [matMenuTriggerFor]="menu" style="border: none !important;background: none !important;">
-                        <mat-icon class="pointer">account_circle</mat-icon>
-                      </button>
-                      <mat-menu #menu="matMenu">
-                        <button mat-menu-item routerLink="/signIn">
-                          <span>ثبت نام یا ورود</span>
-                        </button>
-                        <button mat-menu-item routerLink="/profile">
-                          <span>پروفایل</span>
-                        </button>
-                      </mat-menu>
-                      
-                    <mat-icon routerLink="/signIn" class="pointer">logout</mat-icon>
-                </div>
-            </div>
-           <app-catalogue></app-catalogue>
-            
-        </div>
-      
+<div class="container">
+  <div class="row">
+    <div class="col-">
+      <app-list-of-products></app-list-of-products>
     </div>
+    <div class="col-lg">
+      <app-nav></app-nav>
+      <app-catalogue></app-catalogue>
+    </div>
+  </div>
 </div>
-
-
-  
