@@ -1,1 +1,37 @@
-<p>profile works!</p>
+<div class="container">
+    <div class="col">
+        <h5 style="display: flex;" class="mt-5"> اطلاعات کاربر:</h5>
+        <mat-card class="container rtl">
+            <div class="col">
+                <div class="row d-flex justify-content-around mb-2">
+                    <h6>نام کاربری:</h6>
+                    <mat-form-field appearance="outline">
+                        <input matInput type="text" name="username" [(ngModel)]="currentUser.username" maxlength="45" required>
+                    </mat-form-field>
+                </div>
+                <div class="row d-flex justify-content-around mb-2">
+                    <h6>موبایل:</h6>
+                    <mat-form-field appearance="outline">
+                        <input matInput type="text" name="mobile" [(ngModel)]="currentUser.mobile" maxlength="45" required>
+                    </mat-form-field>
+                </div>
+                <div class="row d-flex justify-content-around mb-2">
+                    <h6>ایمیل:</h6>
+                    <mat-form-field appearance="outline">
+                        <input matInput type="text" name="email" [(ngModel)]="currentUser.email" maxlength="45" required>
+                    </mat-form-field> 
+                </div>
+                <div class="row d-flex justify-content-around mb-2">
+                    <h6>رمزعبور:</h6>
+                    <mat-form-field appearance="outline">
+                        <input matInput type="text" name="password" [(ngModel)]="currentUser.password" maxlength="45" required>
+                    </mat-form-field>
+                </div>
+            </div>
+        </mat-card>
+    </div>
+    <div class="btn-group" role="group">
+        <button type="button" class="btn btn-secondary" (click)="cancelMembership()">لغو عضویت</button>
+        <button type="button" class="btn btn-secondary" (click)="editUser()">ویرایش</button>
+    </div>
+</div>

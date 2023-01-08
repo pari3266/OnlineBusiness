@@ -1,0 +1,24 @@
+::ng-deep .mat-card{
+    margin: 24px;
+    font-size: 14px;
+}
+
+::ng-deep .btn-group, .btn-group-vertical {
+    direction: ltr;
+}
+
+::ng-deep .btn:not(:disabled):not(.disabled) { 
+    background-color: rgb(17, 239, 161) !important;
+}
+
+::ng-deep .btn-group>.btn:not(:first-child) {
+    border: none;
+}
+
+::ng-deep .btn-group>.btn:not(:last-child):not(.dropdown-toggle) {
+    border: none;
+}
+
+::ng-deep .mat-form-field{
+    direction: ltr;
+}
