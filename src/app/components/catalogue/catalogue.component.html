@@ -1,21 +1,41 @@
 <div class="d-flex flex-wrap">
-    <div *ngFor="let item of items.product" style="width: 300px;">
+  <div *ngFor="let item of items.product" style="width: 300px">
     <mat-card class="example-card">
-        <mat-card-header>
+      <mat-card-header>
         <div mat-card-avatar class="example-header-image"></div>
-        <mat-card-title>{{item.branch}}</mat-card-title>
-        <mat-card-subtitle>{{item.name}}</mat-card-subtitle>
-        </mat-card-header>
-        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-        <mat-card-content>
+        <mat-card-title>{{ item.branch }}</mat-card-title>
+        <mat-card-subtitle>{{ item.name }}</mat-card-subtitle>
+      </mat-card-header>
+      <img
+        mat-card-image
+        src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+        alt="Photo of a Shiba Inu"
+      />
+      <mat-card-content>
         <p>
-            The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+          The Shiba Inu is the smallest of the six original and distinct spitz
+          breeds of dog from Japan.
         </p>
-        </mat-card-content>
-        <mat-card-actions class="d-flex justify-content-around">
-            <button class="detail pointer" mat-button [routerLink]="['/product-details/' , item.id]">مشاهده جزییات</button>
-            <button class="comparision pointer" mat-button>مقایسه</button>
-        </mat-card-actions>
-    </mat-card> 
-</div>
+      </mat-card-content>
+      <mat-card-actions class="d-flex justify-content-around">
+        <button
+          class="detail pointer"
+          mat-button
+          [routerLink]="['/product-details/', item.id]"
+        >
+          مشاهده جزییات
+        </button>
+        <button class="comparision pointer" mat-button>مقایسه</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  <div
+    *ngIf="moreItems"
+    (click)="loadMore()"
+    class="d-flex pointer justify-content-center"
+    style="width: 100%"
+  >
+    <!-- <mat-icon>expand-more</mat-icon> -->
+    <img src="./../../../assets/chevron-down.png" class="mb-8 mt-8">
+  </div>
 </div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,8 +9,10 @@ import { Router } from '@angular/router';
 })
 export class ProfileComponent implements OnInit {
   currentUser = {username: '',mobile:'', email: '', password: ''};
+  durationInSeconds: number = 5;
   constructor(
     private router: Router,
+    private _snackBar: MatSnackBar,
   ) { }
 
   ngOnInit(): void {
@@ -19,7 +22,11 @@ export class ProfileComponent implements OnInit {
   }
 
   editUser(){
-    localStorage.setItem('users', JSON.stringify(this.currentUser))
+    localStorage.setItem('users', JSON.stringify(this.currentUser));
+    this._snackBar.open('ویرایش با موفقیت انجام شد','ok' , {
+      duration: this.durationInSeconds * 1000,
+      panelClass: ['success-snackbar']
+    });
   }
 
   cancelMembership(){

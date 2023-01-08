@@ -13,7 +13,7 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { SearchComponent } from './components/search/search.component';
 import { ListOfProductsComponent } from './components/list-of-products/list-of-products.component';
 import { CatalogueComponent } from './components/catalogue/catalogue.component';
-import { ProductDetailsComponent } from './components/product-details/product-details.component';
+import { CatalogueDetailsComponent } from './components/catalogue-details/catalogue-details.component';
 import { ComparisonComponent } from './components/comparison/comparison.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { NavComponent } from './components/nav/nav.component';
@@ -27,7 +27,7 @@ import { NavComponent } from './components/nav/nav.component';
     SearchComponent,
     ListOfProductsComponent,
     CatalogueComponent,
-    ProductDetailsComponent,
+    CatalogueDetailsComponent,
     ComparisonComponent,
     ProfileComponent,
     NavComponent
