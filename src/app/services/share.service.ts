@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ShareService {
   catalogueDetails: any;
-
+  // searchedValues = [];
+  searchedValues = new Subject<any>();
   constructor() { }
 
   setCatalogueDetail(CatalogueDetail: any) {
@@ -15,4 +17,12 @@ export class ShareService {
   getCatalogueDetail() {
     return this.catalogueDetails;
   }
+
+  // setSearchedValue(SearchedValue: any) {
+  //   this.searchedValues = SearchedValue;
+  // }
+
+  // getSearchedValue() {
+  //   return this.searchedValues;
+  // }
 }

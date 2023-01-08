@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormControl} from '@angular/forms';
 import {Observable} from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
+import { ShareService } from 'src/app/services/share.service';
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
@@ -10,9 +11,14 @@ import {map, startWith} from 'rxjs/operators';
 export class SearchComponent implements OnInit {
 
   myControl = new FormControl('');
-  options: string[] = ['کالای دیجیتال', 'پوشاک'];
+  options: string[] = ['کالای دیجیتال', 'پوشاک', 'بازی'];
   filteredOptions!: Observable<string[]>;
 
+  searchedValue: string[] = [];
+
+  constructor(private shareService: ShareService,){
+
+  }
   ngOnInit() {
     this.filteredOptions = this.myControl.valueChanges.pipe(
       startWith(''),
@@ -22,8 +28,10 @@ export class SearchComponent implements OnInit {
 
   private _filter(value: string): string[] {
     const filterValue = value.toLowerCase();
+    this.searchedValue = this.options.filter(option => option.toLowerCase().includes(filterValue));
+    this.shareService.searchedValues.next(this.searchedValue);
 
-    return this.options.filter(option => option.toLowerCase().includes(filterValue));
+    return this.searchedValue;
   }
 
 }

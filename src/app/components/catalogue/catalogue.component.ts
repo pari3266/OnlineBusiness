@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, AfterViewInit, OnInit } from '@angular/core';
 import { ShareService } from 'src/app/services/share.service';
 
 @Component({
@@ -6,11 +6,11 @@ import { ShareService } from 'src/app/services/share.service';
   templateUrl: './catalogue.component.html',
   styleUrls: ['./catalogue.component.scss']
 })
-export class CatalogueComponent implements OnInit {
+export class CatalogueComponent implements OnInit, AfterViewInit {
   items = {product:[{"id": 0,"name":"", "branch":"", "image":"", "description": "", "color": ''},]};
   newItems = {product:[{"id": 0,"name":"", "branch":"", "image":"", "description": "", "color": ''},]};
   moreItems : boolean = false;
-
+  searchItems: any = [];
   constructor(private shareService: ShareService,) { }
 
   ngOnInit(): void {
@@ -37,6 +37,31 @@ export class CatalogueComponent implements OnInit {
         if(this.newItems.product.length >= 1) {
           this.moreItems = true;
         }
+
+  }
+  
+  // **************** not complete ************
+  ngAfterViewInit(): void {
+    //Called after ngAfterContentInit when the component's view has been initialized. Applies to components only.
+    //Add 'implements AfterViewInit' to the class.
+    this.shareService.searchedValues.subscribe(res => {
+      // this.items.product = [];
+      // this.ngOnInit();
+      console.log(res);
+      this.searchItems = res;
+
+      this.items.product.filter(item => item.branch == this.searchItems[0]);
+      console.log(this.items);
+      
+      // for(let a of this.items.product){
+      //   for(let b of this.searchItems){
+      //     if(a.branch == b){
+      //       this.items.product = [];
+      //       this.items.product.push(a);
+      //     }
+      //   }
+      // }
+    });
   }
 
   loadMore(){
