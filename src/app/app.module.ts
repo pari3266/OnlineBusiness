@@ -17,6 +17,7 @@ import { CatalogueDetailsComponent } from './components/catalogue-details/catalo
 import { ComparisonComponent } from './components/comparison/comparison.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { NavComponent } from './components/nav/nav.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +31,7 @@ import { NavComponent } from './components/nav/nav.component';
     CatalogueDetailsComponent,
     ComparisonComponent,
     ProfileComponent,
-    NavComponent
+    NavComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,6 +41,7 @@ import { NavComponent } from './components/nav/nav.component';
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
+    Ng2SearchPipeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

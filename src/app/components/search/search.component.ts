@@ -11,11 +11,11 @@ import { ShareService } from 'src/app/services/share.service';
 export class SearchComponent implements OnInit {
 
   myControl = new FormControl('');
-  options: string[] = ['کالای دیجیتال', 'پوشاک', 'بازی'];
+  options: string[] = [];
   filteredOptions!: Observable<string[]>;
 
   searchedValue: string[] = [];
-
+  term : string = '';
   constructor(private shareService: ShareService,){
 
   }
@@ -27,10 +27,11 @@ export class SearchComponent implements OnInit {
   }
 
   private _filter(value: string): string[] {
+    // this.shareService.searchedValues.next(this.term);
     const filterValue = value.toLowerCase();
     this.searchedValue = this.options.filter(option => option.toLowerCase().includes(filterValue));
-    this.shareService.searchedValues.next(this.searchedValue);
-
+    // this.shareService.searchedValues.next(this.searchedValue);
+    this.shareService.searchedValues.next(value);
     return this.searchedValue;
   }
 

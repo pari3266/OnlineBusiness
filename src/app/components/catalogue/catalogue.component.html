@@ -1,5 +1,5 @@
 <div class="d-flex flex-wrap">
-  <div *ngFor="let item of items.product" style="width: 300px">
+  <div *ngFor="let item of items.product| filter:term" style="width: 300px">
     <mat-card class="example-card">
       <mat-card-header>
         <div mat-card-avatar class="example-header-image"></div>
